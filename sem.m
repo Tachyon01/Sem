@@ -14,12 +14,12 @@ sig = -104;%input('Noise power sigma');
 
 
 %initialization
-lamF=320;
+lamF=320e4;
 beta = -15;
 
 %initializations done
 i=5; out = zeros(1,14);
-for lamD = 5:1:14
+for lamD = 5e4:1e4:14e4
     
     nbar = pi*power(D0,2)*lamD*(1-exp(-2*0.001* lamA));
     muI_func = @(d2) 2*P*nbar*(power(d2,2)*(-2.5*power(d2,-3.5)) - 2*(d2*8.75*power(d2,-4.5) + 39.375*power(d2,-5.5)))/power(D0,2);
